@@ -14,7 +14,7 @@ RUN pip install --no-cache-dir flask torch torchvision pillow requests
 EXPOSE 5000
 
 # Define environment variable
-ENV FLASK_APP=flask-api
+ENV FLASK_APP=flask_api
 
 # Run the Flask app
 CMD ["flask", "run", "--host=0.0.0.0", "--port=5000"]
