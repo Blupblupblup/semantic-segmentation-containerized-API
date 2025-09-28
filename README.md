@@ -11,7 +11,7 @@ This repo has used content from PyTorch's documentation https://docs.pytorch.org
 Run the API locally:
 
 ```commandline
-python flask-api.py
+python flask_api.py
 ```
 
 Then query the API from the same server:
