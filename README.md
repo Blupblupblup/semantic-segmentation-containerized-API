@@ -6,6 +6,8 @@ This repo has used content from PyTorch's documentation https://docs.pytorch.org
 
 # How to test the API
 
+## Without the Docker container
+
 Run the API locally:
 
 ```commandline
@@ -20,4 +22,24 @@ curl -X POST http://localhost:5000/count_cat_pixels   -H "Content-Type: applicat
 
 ```commandline
 curl -X POST http://localhost:5000/count_cat_pixels   -H "Content-Type: application/json"   -d '{"image_url": "https://farm6.staticflickr.com/5291/5496830436_1b355de4c3_z.jpg"}'
+```
+
+## With the Docker container
+
+Build the Docker image:
+
+```commandline
+docker build -t semant-segm-pix-counter .
+```
+
+Launch the container (this will trigger the downloading of the model `fcn_resnet50_coco-1167a1af.pth`):
+
+```commandline
+docker run -p 5000:5000 semant-segm-pix-counter
+```
+
+Then query the API from the server hosting the container:
+
+```commandline
+
 ```
