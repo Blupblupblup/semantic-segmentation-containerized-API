@@ -4,7 +4,7 @@ Containerized API to count pixels produced by semantic segmentation.
 
 This repo has used content from PyTorch's documentation https://docs.pytorch.org/vision/main/models.html and from Mistral's Le Chat.
 
-# How to test the API
+# How to use the API
 
 ## Without the Docker container
 
@@ -39,3 +39,13 @@ docker run -p 5000:5000 semant-segm-pix-counter
 ```
 
 Then query the API from the server hosting the container with the previously introduced `curl` commands.
+
+# How to conduct load testing using Locust
+
+The `Locust` library is used for load testing, i.e. simulating concurrent users sending requests to the API (cf. https://docs.locust.io/en/stable/writing-a-locustfile.html).
+
+To launch `Locust` locally run:
+```commandline
+locust -f load_testing.py
+```
+then go to http://127.0.0.1:8089 in your browser to configure the number of users defining peak concurrency. Host should be set to http://127.0.0.1:5000 to correspond to our pixels counting API.
