@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . /app
 
 # Install required packages
-RUN pip install --no-cache-dir flask torch torchvision transformers pillow requests
+RUN pip install --no-cache-dir flask torch torchvision pillow requests
 
 # Expose the port the app runs on
 EXPOSE 5000
