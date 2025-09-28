@@ -38,8 +38,4 @@ Launch the container (this will trigger the downloading of the model `fcn_resnet
 docker run -p 5000:5000 semant-segm-pix-counter
 ```
 
-Then query the API from the server hosting the container:
-
-```commandline
-
-```
+Then query the API from the server hosting the container with the previously introduced `curl` commands.
